@@ -43,7 +43,7 @@ function carouselComponent() {
   turntableImg.src = "./assets/carousel/turntable.jpeg";
 
   // Img Styles
-  mountainImg.style.display = "inline-block";
+  mountainImg.style.display = "block";
 
   // Apend Items
   carouselContainer.appendChild(carousel);
@@ -58,3 +58,37 @@ function carouselComponent() {
 }
 
 carouselComponent();
+
+let carouselImages = Array.from(document.querySelectorAll(".carousel img"));
+let imageIndex = 0;
+let leftArrow = document.querySelector(".left-button");
+let rightArrow = document.querySelector(".right-button");
+
+const slideLeft = () => {
+  carouselImages[imageIndex].style.display = "none";
+
+  // Check if the index is 0, and sets it to the last image in the array
+  if (imageIndex === 0) {
+    imageIndex = carouselImages.length - 1;
+  } else {
+    imageIndex--;
+  }
+
+  carouselImages[imageIndex].style.display = "inline";
+};
+
+const slideRight = () => {
+  carouselImages[imageIndex].style.display = "none";
+
+  // Check if the index is the last item in the array, and sets it to the first image in the array
+  if (imageIndex === carouselImages.length - 1) {
+    imageIndex = 0;
+  } else {
+    imageIndex++;
+  }
+
+  carouselImages[imageIndex].style.display = "inline";
+};
+
+leftArrow.addEventListener("click", slideLeft);
+rightArrow.addEventListener("click", slideRight);
