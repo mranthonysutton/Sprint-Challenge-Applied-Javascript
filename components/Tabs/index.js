@@ -28,7 +28,7 @@ function TabComponent(tabLink) {
 const topicAxios = axios
   .get("https://lambda-times-backend.herokuapp.com/topics")
   .then(response => {
-    console.log(response);
+    // console.log(response);
     topics = response.data.topics;
 
     topics.forEach(topic => {
