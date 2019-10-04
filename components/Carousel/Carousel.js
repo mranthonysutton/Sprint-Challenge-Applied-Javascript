@@ -17,3 +17,44 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+function carouselComponent() {
+  // Create Elements
+  const carouselContainer = document.querySelector(".carousel-container"),
+    carousel = document.createElement("div"),
+    leftButton = document.createElement("div"),
+    mountainImg = document.createElement("img"),
+    computerImg = document.createElement("img"),
+    treesImg = document.createElement("img"),
+    turntableImg = document.createElement("img"),
+    rightButton = document.createElement("div");
+
+  // Add Classes
+  carousel.classList.add("carousel");
+  leftButton.classList.add("left-button");
+  rightButton.classList.add("right-button");
+
+  // Text Content
+  leftButton.textContent = "<";
+  rightButton.textContent = ">";
+  mountainImg.src = "./assets/carousel/mountains.jpeg";
+  computerImg.src = "./assets/carousel/computer.jpeg";
+  treesImg.src = "./assets/carousel/trees.jpeg";
+  turntableImg.src = "./assets/carousel/turntable.jpeg";
+
+  // Img Styles
+  mountainImg.style.display = "inline-block";
+
+  // Apend Items
+  carouselContainer.appendChild(carousel);
+  carousel.appendChild(leftButton);
+  carousel.appendChild(mountainImg);
+  carousel.appendChild(computerImg);
+  carousel.appendChild(treesImg);
+  carousel.appendChild(turntableImg);
+  carousel.appendChild(rightButton);
+
+  return carousel;
+}
+
+carouselComponent();
